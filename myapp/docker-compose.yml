@@ -1,0 +1,12 @@
+version: '3'
+services:
+    app:
+        build: .
+        volumes:
+            - .:/usr/src/app
+        container_name: calculator-container
+        image: brianjcal/calculator-image
+        restart: always
+        ports:
+            - 4026:8080
+        command: bash -c /usr/src/app/calculator.js
